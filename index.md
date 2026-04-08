@@ -5,7 +5,7 @@ layout: default
 <div class="notion-header">
   <img src="https://images.pexels.com/photos/36116194/pexels-photo-36116194.jpeg" class="notion-cover">
   <div class="notion-icon-container">
-    <img src="https://em-content.zobj.net/source/apple/354/cat_1f408.png" class="notion-profile-icon">
+    <img src="/assets/img/avatar-icon2.png" class="notion-profile-icon">
   </div>
 </div>
 

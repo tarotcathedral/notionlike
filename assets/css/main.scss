@@ -1,64 +1,52 @@
 ---
 ---
 
-// 1. Zmienne Notion
 $n-text: #37352f;
 $n-bg: #ffffff;
-$n-grey: #f1f1ef;
+$n-grey: #f1f1ef; // Jasnoszary dla Callout i tła kafelków
 $n-border: rgba(55, 53, 47, 0.09);
 
-// 2. Ogólne ustawienia strony
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: 'Inter', -apple-system, sans-serif;
   color: $n-text;
-  background-color: $n-bg;
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
+  margin: 0; padding: 0;
+  line-height: 1.6;
 }
 
-// 3. Nagłówek (Cover i Ikona)
-.notion-header {
-  width: 100%;
-  position: relative;
-}
+/* Układ okładki */
+.notion-cover { width: 100%; height: 280px; object-fit: cover; }
+.notion-icon-container { max-width: 1000px; margin: 0 auto; position: relative; padding: 0 40px; }
+.notion-profile-icon { width: 80px; height: 80px; border-radius: 12px; margin-top: -40px; position: absolute; border: 4px solid white; background: white; }
 
-.notion-cover {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
-
-.notion-icon-container {
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
+/* Główny kontener dwóch kolumn */
+.notion-main-layout {
+  max-width: 1000px;
+  margin: 60px auto;
   padding: 0 40px;
+  display: flex;
+  gap: 40px;
 }
 
-.notion-profile-icon {
-  width: 78px;
-  height: 78px;
-  border-radius: 12px;
-  background: white;
-  margin-top: -45px;
-  position: absolute;
-  border: 4px solid white;
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.05);
+/* Kolumny */
+.notion-column-left { flex: 2; } // Szersza kolumna na posty
+.notion-column-right { flex: 1; min-width: 250px; } // Węższa kolumna na menu
+
+/* Callout Box */
+.notion-callout {
+  background: #f1f1ef; // Jasnoszary
+  padding: 16px 20px;
+  border-radius: 4px;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+  font-size: 14px;
 }
 
-.notion-content {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 60px 40px;
-}
-
-// 4. Widok Galerii (Kafelki)
+/* Galeria Kafelków */
 .notion-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 16px;
-  margin-top: 30px;
+  display: flex;
+  flex-direction: column; // Lista pionowa dla wąskiego układu
+  gap: 12px;
 }
 
 .notion-card {
@@ -67,40 +55,31 @@ body {
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  transition: background 0.2s ease;
-  
-  &:hover {
-    background: rgba(55, 53, 47, 0.03);
-  }
+  transition: background 0.15s ease-in-out;
+  display: flex; // Kafelek poziomy (jak w Notion na bocznej szpalcie)
 }
 
-.notion-card-cover {
-  height: 160px;
-  width: 100%;
-  object-fit: cover;
-  border-bottom: 1px solid $n-border;
+.notion-card:hover {
+  background: rgba(55, 53, 47, 0.04); // Delikatne podświetlenie
 }
 
-.notion-card-content {
-  padding: 8px 12px 14px;
-}
+.notion-card-cover { width: 120px; height: 100px; object-fit: cover; }
+.notion-card-content { padding: 12px; }
+.notion-card-title { font-weight: 600; font-size: 15px; margin: 0; }
 
-.notion-card-title {
-  font-weight: 600;
-  font-size: 14px;
-  margin: 0 0 4px 0;
+/* Menu boczne (Navigation) */
+.notion-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 15px;
+  margin-bottom: 2px;
 }
+.notion-nav-item:hover { background: $n-grey; }
 
-// 5. Tagi w stylu Notion (Kolory z Twoich screenów)
-.n-tag {
-  display: inline-block;
-  padding: 0 6px;
-  border-radius: 3px;
-  font-size: 12px;
-  margin-right: 4px;
-  font-weight: 500;
-}
-
-.tag-history { background: #e8f3fb; color: #20618b; }    // Niebieski
-.tag-practice { background: #f1f0ef; color: #5a5a5a; }   // Szary
-.tag-spirituality { background: #fdecc8; color: #b4833e; } // Żółty/Pomarańczowy
+/* Tagi */
+.n-tag { display: inline-block; padding: 0 6px; border-radius: 3px; font-size: 11px; margin-top: 5px; background: #e8f3fb; color: #20618b; }

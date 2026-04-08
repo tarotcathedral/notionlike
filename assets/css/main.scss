@@ -3,7 +3,7 @@
 
 $n-text: #37352f;
 $n-bg: #ffffff;
-$n-grey: #f1f1ef; // Jasnoszary dla Callout i tła kafelków
+$n-grey: #f1f1ef;
 $n-border: rgba(55, 53, 47, 0.09);
 
 body {
@@ -13,27 +13,21 @@ body {
   line-height: 1.6;
 }
 
-/* Układ okładki */
-.notion-cover { width: 100%; height: 280px; object-fit: cover; }
-.notion-icon-container { max-width: 1000px; margin: 0 auto; position: relative; padding: 0 40px; }
-.notion-profile-icon { width: 80px; height: 80px; border-radius: 12px; margin-top: -40px; position: absolute; border: 4px solid white; background: white; }
-
-/* Główny kontener dwóch kolumn */
+/* Zwężony układ główny (Notion "Small Text / Full Width" off vibe) */
 .notion-main-layout {
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 0 40px;
+  max-width: 900px; /* Zwężone z 1000px */
+  margin: 40px auto;
+  padding: 0 20px;
   display: flex;
-  gap: 40px;
+  gap: 30px;
 }
 
-/* Kolumny */
-.notion-column-left { flex: 2; } // Szersza kolumna na posty
-.notion-column-right { flex: 1; min-width: 250px; } // Węższa kolumna na menu
+.notion-column-left { flex: 1.8; min-width: 0; } 
+.notion-column-right { width: 240px; flex-shrink: 0; }
 
 /* Callout Box */
 .notion-callout {
-  background: #f1f1ef; // Jasnoszary
+  background: #f1f1ef;
   padding: 16px 20px;
   border-radius: 4px;
   display: flex;
@@ -42,11 +36,12 @@ body {
   font-size: 14px;
 }
 
-/* Galeria Kafelków */
+/* SIATKA KAFELKÓW (GRID) */
 .notion-gallery {
-  display: flex;
-  flex-direction: column; // Lista pionowa dla wąskiego układu
-  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Krótsze kafelki */
+  gap: 16px;
+  margin-top: 20px;
 }
 
 .notion-card {
@@ -55,31 +50,40 @@ body {
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  transition: background 0.15s ease-in-out;
-  display: flex; // Kafelek poziomy (jak w Notion na bocznej szpalcie)
+  transition: background 0.15s ease;
+  display: flex;
+  flex-direction: column; /* Obrazek na górze, tekst na dole */
+  height: 100%;
 }
 
 .notion-card:hover {
-  background: rgba(55, 53, 47, 0.04); // Delikatne podświetlenie
+  background: rgba(55, 53, 47, 0.04);
 }
 
-.notion-card-cover { width: 120px; height: 100px; object-fit: cover; }
-.notion-card-content { padding: 12px; }
-.notion-card-title { font-weight: 600; font-size: 15px; margin: 0; }
+.notion-card-cover { 
+  width: 100%; 
+  height: 120px; /* Stała wysokość obrazka */
+  object-fit: cover; 
+  border-bottom: 1px solid $n-border;
+}
 
-/* Menu boczne (Navigation) */
+.notion-card-content { padding: 10px 12px; }
+.notion-card-title { font-weight: 600; font-size: 14px; margin: 0; line-height: 1.3; }
+
+/* Menu boczne */
 .notion-nav-item {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 4px 8px;
+  padding: 6px 10px;
   border-radius: 4px;
   text-decoration: none;
   color: inherit;
-  font-size: 15px;
-  margin-bottom: 2px;
+  font-size: 14px;
 }
-.notion-nav-item:hover { background: $n-grey; }
+.notion-nav-item:hover { background: rgba(55, 53, 47, 0.05); }
 
-/* Tagi */
-.n-tag { display: inline-block; padding: 0 6px; border-radius: 3px; font-size: 11px; margin-top: 5px; background: #e8f3fb; color: #20618b; }
+/* Okładka i ikona */
+.notion-cover { width: 100%; height: 200px; object-fit: cover; }
+.notion-icon-container { max-width: 900px; margin: 0 auto; position: relative; padding: 0 20px; }
+.notion-profile-icon { width: 72px; height: 72px; border-radius: 12px; margin-top: -36px; position: absolute; border: 3px solid white; background: white; }

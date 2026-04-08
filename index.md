@@ -3,11 +3,12 @@ layout: default
 ---
 
 <div class="notion-header">
-  <img src="https://www.notion.so/images/page-cover/met_bruegel_1565.jpg" class="notion-cover">
+  <img src="https://unsplash.com/photos/yellow-green-and-red-floral-print-cards-y3qrbAgm7q8" class="notion-cover">
   <div class="notion-icon-container">
     <img src="https://em-content.zobj.net/source/apple/354/cat_1f408.png" class="notion-profile-icon">
   </div>
 </div>
+
 
 <div class="notion-title-section">
   <h1 style="font-size: 32px; margin-bottom: 15px; font-weight: 700;">Tarot Cathedral</h1>

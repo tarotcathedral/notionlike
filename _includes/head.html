@@ -1,22 +1,41 @@
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title }} | {{ site.title }}</title>
 
-  <title>
-    {%- if page.title -%}
-      {{ page.title }}
-    {%- else -%}
-      {{ site.title }}
-    {%- endif -%}
-  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  {%- seo title=false -%}
-  {%- feed_meta -%}
+  <style>
+    /* TO JEST NASZ STYL NOTION WKLEJONY NA SZTYWNO */
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #37352f;
+      background-color: #ffffff;
+      line-height: 1.6;
+      max-width: 700px; /* Szerokość jak w Notion */
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
 
-  <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | relative_url }}" />
-  
-  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5em;
+    }
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.css" crossorigin="anonymous">
+    a {
+      color: inherit;
+      text-decoration-color: rgba(55, 53, 47, 0.2);
+    }
+
+    header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 15px; }
+  </style>
 </head>

@@ -1,101 +1,24 @@
----
----
-
-$n-text: #37352f;
-$n-bg: #ffffff;
-$n-grey: #f1f1ef;
-$n-border: rgba(55, 53, 47, 0.09);
-
-body {
-  font-family: 'Inter', -apple-system, sans-serif;
-  color: $n-text;
-  margin: 0; padding: 0;
-  line-height: 1.6;
-}
-
-/* Okładka i ikona */
-.notion-cover { width: 100%; height: 200px; object-fit: cover; }
-.notion-icon-container { max-width: 900px; margin: 0 auto; position: relative; padding: 0 20px; }
-.notion-profile-icon { width: 72px; height: 72px; border-radius: 12px; margin-top: -36px; position: absolute; border: 3px solid white; background: white; z-index: 10; }
-
-/* Układ główny - DESKTOP */
-.notion-main-layout {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-  display: flex;
-  gap: 30px;
-}
-
-.notion-column-left { flex: 1.8; min-width: 0; } 
-.notion-column-right { width: 240px; flex-shrink: 0; }
-
-/* Callout Box */
-.notion-callout {
-  background: #f1f1ef;
-  padding: 16px 20px;
-  border-radius: 4px;
-  display: flex;
-  gap: 12px;
-  margin-bottom: 30px;
-  font-size: 14px;
-}
-
-/* Siatka postów */
-.notion-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
-  margin-top: 20px;
-}
-
-.notion-card {
-  border: 1px solid rgba(55, 53, 47, 0.09);
-  border-radius: 8px;
-  overflow: hidden;
-  text-decoration: none;
-  color: inherit;
-  transition: background 0.15s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.notion-card:hover { background: rgba(55, 53, 47, 0.04); }
-.notion-card-cover { width: 100%; height: 120px; object-fit: cover; border-bottom: 1px solid rgba(55, 53, 47, 0.09); }
-.notion-card-content { padding: 10px 12px; }
-.notion-card-title { font-weight: 600; font-size: 14px; margin: 0; line-height: 1.3; }
-
-.notion-nav-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 10px;
-  border-radius: 4px;
-  text-decoration: none;
-  color: inherit;
-  font-size: 14px;
-}
-.notion-nav-item:hover { background: rgba(55, 53, 47, 0.05); }
-
 /* --- RESPONSYWNOŚĆ (MOBILE) --- */
 
 @media (max-width: 768px) {
   .notion-main-layout {
-    flex-direction: column-reverse; /* Menu idzie na górę, posty pod spód */
-    margin-top: 60px;
+    flex-direction: column; /* Teraz Navigation będzie nad postami, ale pod tytułem */
+    margin-top: 20px; /* Mniejszy odstęp, bo tytuł już tam jest */
   }
   
   .notion-column-right {
     width: 100%;
-    margin-bottom: 20px;
+    order: 1; /* Wymuszamy, żeby menu było pierwsze w tej sekcji */
+    margin-bottom: 30px;
   }
 
   .notion-column-left {
     width: 100%;
+    order: 2; /* Posty idą pod menu */
   }
 
   .notion-gallery {
-    grid-template-columns: 1fr; /* Posty jeden pod drugim */
+    grid-template-columns: 1fr;
   }
 
   .notion-card-cover {

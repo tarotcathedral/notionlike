@@ -87,6 +87,25 @@ body {
 
 .notion-footer { margin-top: 80px; margin-bottom: 40px; }
 
+/* Styl Tagów Notion */
+.n-tag {
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 500;
+  margin-right: 4px;
+  text-decoration: none;
+}
+
+/* Definicja kolorów dla konkretnych tagów */
+.tag-history { background: #e8f3fb; color: #20618b; }    /* Niebieski */
+.tag-practice { background: #f1f0ef; color: #5a5a5a; }   /* Szary */
+.tag-spirituality { background: #fdecc8; color: #b4833e; } /* Pomarańczowy */
+.tag-art { background: #f5ebfa; color: #6931a5; }        /* Fioletowy */
+.tag-decks { background: #e2f5e9; color: #1c6b3e; }      /* Zielony */
+
+
 /* --- MOBILE --- */
 @media (max-width: 768px) {
   .notion-main-layout {

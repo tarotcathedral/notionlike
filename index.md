@@ -3,11 +3,12 @@ layout: default
 ---
 
 <div class="notion-header">
-  <img src="https://unsplash.com/photos/yellow-green-and-red-floral-print-cards-y3qrbAgm7q8" class="notion-cover">
+  <img src="https://images.pexels.com/photos/36116194/pexels-photo-36116194.jpeg" class="notion-cover">
   <div class="notion-icon-container">
     <img src="https://em-content.zobj.net/source/apple/354/cat_1f408.png" class="notion-profile-icon">
   </div>
 </div>
+
 
 
 <div class="notion-title-section">

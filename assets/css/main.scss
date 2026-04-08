@@ -4,7 +4,7 @@
 $n-text: #37352f;
 $n-bg: #ffffff;
 $n-grey: #f1f1ef;
-$n-border: rgba(55, 53, 47: 0.09);
+$n-border: rgba(55, 53, 47, 0.09);
 
 body {
   font-family: 'Inter', -apple-system, sans-serif;
@@ -86,7 +86,8 @@ body {
   }
   
   .notion-column-right {
-    width: 100%; /* Menu na całą szerokość */
+    width: 100%;
+    margin-bottom: 20px;
   }
 
   .notion-column-left {
@@ -98,6 +99,6 @@ body {
   }
 
   .notion-card-cover {
-    height: 180px; /* Nieco większe zdjęcia na telefonie lepiej wyglądają */
+    height: 180px;
   }
 }

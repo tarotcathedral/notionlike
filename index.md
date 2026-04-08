@@ -63,3 +63,11 @@ layout: default
   </div>
 
 </div>
+
+<footer style="max-width: 900px; margin: 80px auto 40px; padding: 0 20px;">
+  <hr style="border: none; border-top: 1px solid rgba(55, 53, 47, 0.09); margin-bottom: 20px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: rgba(55, 53, 47, 0.5);">
+    <p><em>All rights reserved. 2026.</em></p>
+    <a href="{{ '/' | relative_url }}" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(55, 53, 47, 0.2);">Tarot Cathedral Home</a>
+  </div>
+</footer>

@@ -9,7 +9,7 @@ layout: default
   </div>
 </div>
 
-<div style="max-width: 900px; margin: 40px auto 0; padding: 0 20px;">
+<div class="notion-title-section">
   <h1 style="font-size: 32px; margin-bottom: 15px; font-weight: 700;">Tarot Cathedral</h1>
   
   <div class="notion-callout">
@@ -23,7 +23,7 @@ layout: default
 <div class="notion-main-layout">
   
   <div class="notion-column-left">
-    <h3 style="font-size: 18px; color: rgba(55, 53, 47, 0.5); border-bottom: 1px solid #eee; padding-bottom: 8px; margin-top: 0;">Entries</h3>
+    <h3 style="font-size: 18px; color: rgba(55, 53, 47, 0.5); border-bottom: 1px solid #eee; padding-bottom: 8px; margin: 0 0 20px 0;">Entries</h3>
     
     <div class="notion-gallery">
       {% for post in site.posts %}
@@ -64,7 +64,7 @@ layout: default
 
 </div>
 
-<footer style="max-width: 900px; margin: 80px auto 40px; padding: 0 20px;">
+<footer class="notion-footer">
   <hr style="border: none; border-top: 1px solid rgba(55, 53, 47, 0.09); margin-bottom: 20px;">
   <div style="display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: rgba(55, 53, 47, 0.5);">
     <p><em>All rights reserved. 2026.</em></p>

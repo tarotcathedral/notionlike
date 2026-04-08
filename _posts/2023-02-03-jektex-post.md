@@ -3,7 +3,7 @@ layout: post
 title: "Moja pierwsza karta"
 date: 2026-04-08
 tags: [history, practice]
-image: /assets/img/karta-tarota.webp
+image: /assets/img/karta-tarota.jpg
 ---
 
 This post is here to test [$$\jektex$$](https://github.com/yagarea/jektex),

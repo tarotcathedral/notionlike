@@ -1,33 +1,44 @@
-title: no style, please! # name of the site
-author: Riccardo Graziosi # name of site's author
-email: riccardo.graziosi97@gmail.com # email of site's author
-url: https://tarotcathedral.github.io # root address of the site
-baseurl: "/notionlike" # subpath of the site, e.g. "/blog" (leave it blank "" if you're site shouldn't use a subpath)
-description: > # description of the site (multiple lines allowed)
-  A (nearly) no-CSS, fast, minimalist Jekyll theme.
+# Site Settings
+title: "Tarot Cathedral — Workshop"
+author: "Twoje Imię" # Możesz tu wpisać siebie
+email: "twoj@email.com"
+description: >
+  Testowy widok Notion dla bloga Tarot Cathedral.
 
-permalink: /:slug.html
+# URL Settings (Kluczowe dla poprawnego działania podglądu)
+url: "https://tarotcathedral.com"
+baseurl: "/notionlike"
 
-favicon: "logo.png" # name+extension of favicon (which must be put on the root folder)
-# goat_counter: "yoursitename" # put your GoatCounter name if you want to use GoatCounter analytics
+# Theme Settings
+# Zakomentowane, abyś mogła edytować pliki lokalnie i zmieniać wygląd na Notion
+# remote_theme: riggraz/no-style-please
 
-remote_theme: riggraz/no-style-please # if you are using GitHub Pages, change it to remote_theme: riggraz/no-style-please
+# Ustawienia linków (Notion-style: czyste linki bez .html)
+permalink: /:title/
 
+# Favicon
+favicon: "logo.png"
+
+# Konfiguracja specyficzna dla szablonu no-style-please
 theme_config:
-  appearance: "auto" # can be "light", "dark" or "auto"
-  back_home_text: ".." # customize text for homepage link in post layout
-  date_format: "%Y-%m-%d" # customize how date is formatted
-  show_description: false # show blog description in home page
-  lowercase_titles: true # show titles in lowercase in lists
+  appearance: "light"         # Notion najlepiej wygląda w jasnym trybie
+  back_home_text: "← Home"    # Prosta nawigacja
+  date_format: "%B %d, %Y"    # Format daty: April 8, 2026 (jak w Notion)
+  show_description: true      # Pokaż opis na stronie głównej
+  lowercase_titles: false     # Notion nie wymusza małych liter
 
+# Markdown i Sass
+markdown: kramdown
 sass:
   style: compressed
 
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jektex
 
+# Twoje ustawienia Jektex (zachowane ze screena)
 jektex:
   cache_dir: ".jektex-cache"
   ignore: ["*.xml"]
@@ -35,3 +46,13 @@ jektex:
   macros:
     - ["\\Q", "\\mathbb{Q}"]
     - ["\\C", "\\mathbb{C}"]
+
+# Wykluczenia
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

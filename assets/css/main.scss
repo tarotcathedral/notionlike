@@ -45,7 +45,7 @@ body {
 /* Galeria Kafelków */
 .notion-gallery {
   display: flex;
-  flex-direction: column; // Lista pionowa dla wąskiego układu
+  flex-direction: grid; // Lista pionowa dla wąskiego układu
   gap: 12px;
 }
 

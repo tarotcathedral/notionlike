@@ -1,21 +1,44 @@
 ---
 ---
 
-// To zastępuje niedziałający import i daje nam kontrolę
+// To są zmienne Notion
+$notion-text: #37352f;
+$notion-border: rgba(55, 53, 47, 0.09);
+
 body {
-  font-family: sans-serif;
-  background-color: white;
-  color: #37352f;
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 50px 20px;
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: $notion-text;
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
-  border-bottom: 1px solid #eaeaea;
-  padding-bottom: 10px;
+.notion-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  padding: 20px;
 }
 
-a {
-  color: #2eaadc;
+.notion-card {
+  border: 1px solid $notion-border;
+  border-radius: 8px;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  
+  &:hover {
+    background: rgba(55, 53, 47, 0.03);
+  }
+}
+
+.notion-card-cover {
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+  border-bottom: 1px solid $notion-border;
+}
+
+.notion-card-content {
+  padding: 12px;
 }

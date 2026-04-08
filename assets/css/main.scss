@@ -1,4 +1,21 @@
 ---
 ---
 
-@import "no-style-please";
+// To zastępuje niedziałający import i daje nam kontrolę
+body {
+  font-family: sans-serif;
+  background-color: white;
+  color: #37352f;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 50px 20px;
+}
+
+h1 {
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 10px;
+}
+
+a {
+  color: #2eaadc;
+}

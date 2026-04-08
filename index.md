@@ -35,12 +35,14 @@ layout: default
         {% endif %}
         <div class="notion-card-content">
           <h4 class="notion-card-title">{{ post.title }}</h4>
+          
           <div style="font-size: 12px; color: rgba(55, 53, 47, 0.5); margin-top: 4px;">
             {{ post.date | date: "%B %d, %Y" }}
           </div>
+
           <div style="margin-top: 8px;">
              {% for tag in post.tags %}
-               <span style="background: #e8f3fb; color: #20618b; padding: 0 5px; border-radius: 3px; font-size: 11px; margin-right: 4px;">{{ tag }}</span>
+               <span class="n-tag tag-{{ tag | slugify }}">{{ tag }}</span>
              {% endfor %}
           </div>
         </div>

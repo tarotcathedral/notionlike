@@ -4,7 +4,7 @@
 $n-text: #37352f;
 $n-bg: #ffffff;
 $n-grey: #f1f1ef;
-$n-border: rgba(55, 53, 47, 0.09);
+$n-border: rgba(55, 53, 47: 0.09);
 
 body {
   font-family: 'Inter', -apple-system, sans-serif;
@@ -13,9 +13,14 @@ body {
   line-height: 1.6;
 }
 
-/* Zwężony układ główny (Notion "Small Text / Full Width" off vibe) */
+/* Okładka i ikona */
+.notion-cover { width: 100%; height: 200px; object-fit: cover; }
+.notion-icon-container { max-width: 900px; margin: 0 auto; position: relative; padding: 0 20px; }
+.notion-profile-icon { width: 72px; height: 72px; border-radius: 12px; margin-top: -36px; position: absolute; border: 3px solid white; background: white; z-index: 10; }
+
+/* Układ główny - DESKTOP */
 .notion-main-layout {
-  max-width: 900px; /* Zwężone z 1000px */
+  max-width: 900px;
   margin: 40px auto;
   padding: 0 20px;
   display: flex;
@@ -36,41 +41,30 @@ body {
   font-size: 14px;
 }
 
-/* SIATKA KAFELKÓW (GRID) */
+/* Siatka postów */
 .notion-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Krótsze kafelki */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
   margin-top: 20px;
 }
 
 .notion-card {
-  border: 1px solid $n-border;
+  border: 1px solid rgba(55, 53, 47, 0.09);
   border-radius: 8px;
   overflow: hidden;
   text-decoration: none;
   color: inherit;
   transition: background 0.15s ease;
   display: flex;
-  flex-direction: column; /* Obrazek na górze, tekst na dole */
-  height: 100%;
+  flex-direction: column;
 }
 
-.notion-card:hover {
-  background: rgba(55, 53, 47, 0.04);
-}
-
-.notion-card-cover { 
-  width: 100%; 
-  height: 120px; /* Stała wysokość obrazka */
-  object-fit: cover; 
-  border-bottom: 1px solid $n-border;
-}
-
+.notion-card:hover { background: rgba(55, 53, 47, 0.04); }
+.notion-card-cover { width: 100%; height: 120px; object-fit: cover; border-bottom: 1px solid rgba(55, 53, 47, 0.09); }
 .notion-card-content { padding: 10px 12px; }
 .notion-card-title { font-weight: 600; font-size: 14px; margin: 0; line-height: 1.3; }
 
-/* Menu boczne */
 .notion-nav-item {
   display: flex;
   align-items: center;
@@ -83,7 +77,27 @@ body {
 }
 .notion-nav-item:hover { background: rgba(55, 53, 47, 0.05); }
 
-/* Okładka i ikona */
-.notion-cover { width: 100%; height: 200px; object-fit: cover; }
-.notion-icon-container { max-width: 900px; margin: 0 auto; position: relative; padding: 0 20px; }
-.notion-profile-icon { width: 72px; height: 72px; border-radius: 12px; margin-top: -36px; position: absolute; border: 3px solid white; background: white; }
+/* --- RESPONSYWNOŚĆ (MOBILE) --- */
+
+@media (max-width: 768px) {
+  .notion-main-layout {
+    flex-direction: column-reverse; /* Menu idzie na górę, posty pod spód */
+    margin-top: 60px;
+  }
+  
+  .notion-column-right {
+    width: 100%; /* Menu na całą szerokość */
+  }
+
+  .notion-column-left {
+    width: 100%;
+  }
+
+  .notion-gallery {
+    grid-template-columns: 1fr; /* Posty jeden pod drugim */
+  }
+
+  .notion-card-cover {
+    height: 180px; /* Nieco większe zdjęcia na telefonie lepiej wyglądają */
+  }
+}

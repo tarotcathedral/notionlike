@@ -12,16 +12,16 @@ layout: default
 <div class="notion-main-layout">
   
   <div class="notion-column-left">
-    <h1 style="font-size: 40px; margin-bottom: 10px;">Tarot Cathedral</h1>
+    <h1 style="font-size: 32px; margin-bottom: 15px; font-weight: 700;">Tarot Cathedral</h1>
     
     <div class="notion-callout">
-      <span>💡</span>
+      <span>✨</span>
       <div>
-        Welcome on my blog about <strong>Tarot and numerology</strong>. Here I share my historical research, thoughts and some art.
+        Welcome on my blog about <strong>Tarot and numerology</strong>. Exploring the mysteries through art and history.
       </div>
     </div>
 
-    <h3 style="border-bottom: 1px solid #eee; padding-bottom: 8px; margin-top: 40px;">Entries</h3>
+    <h3 style="font-size: 18px; color: rgba(55, 53, 47, 0.5); border-bottom: 1px solid #eee; padding-bottom: 8px; margin-top: 30px;">Entries</h3>
     
     <div class="notion-gallery">
       {% for post in site.posts %}
@@ -29,11 +29,13 @@ layout: default
         {% if post.image %}
           <img src="{{ post.image | relative_url }}" class="notion-card-cover">
         {% else %}
-          <div style="width:120px; height:100px; background: #f7f7f5;"></div>
+          <div style="width:100%; height:120px; background: #f7f7f5;"></div>
         {% endif %}
         <div class="notion-card-content">
           <h4 class="notion-card-title">{{ post.title }}</h4>
-          <span class="n-tag">history</span>
+          <div style="margin-top: 8px;">
+             <span style="background: #e8f3fb; color: #20618b; padding: 0 5px; border-radius: 3px; font-size: 11px;">history</span>
+          </div>
         </div>
       </a>
       {% endfor %}
@@ -41,13 +43,14 @@ layout: default
   </div>
 
   <div class="notion-column-right">
-    <div class="notion-callout" style="flex-direction: column; background: #f7f7f5;">
-      <strong style="margin-bottom: 10px; font-family: serif; font-style: italic; font-size: 1.2em; text-align: center;">Navigation</strong>
-      <div style="border-top: 1px solid #ddd; padding-top: 10px;">
-        <a href="/" class="notion-nav-item">🏠 Home</a>
-        <a href="/about" class="notion-nav-item">🐱 About me</a>
-        <a href="/art" class="notion-nav-item">🎨 My Art</a>
-        <a href="/links" class="notion-nav-item">🔗 Links</a>
+    <div style="background: #f7f7f5; padding: 20px; border-radius: 8px;">
+      <h3 style="font-family: serif; font-style: italic; text-align: center; margin-top: 0;">Navigation</h3>
+      <div style="margin-top: 15px;">
+        <a href="/" class="notion-nav-item">🗂 Tarot Cathedral</a>
+        <a href="/" class="notion-nav-item">📖 Blog</a>
+        <a href="/" class="notion-nav-item">🖼 My Art</a>
+        <a href="/" class="notion-nav-item">🎓 Links</a>
+        <a href="/" class="notion-nav-item">👤 About me</a>
       </div>
     </div>
   </div>
